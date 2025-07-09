@@ -22,8 +22,8 @@ public class MainView extends AppLayout {
 		DrawerToggle toggle = new DrawerToggle();
         H1 title = new H1("Home");
         title.getStyle()
-        	.set("font-size", "var(--lumo-font-size-l)")
-        	.set("margin", "0");
+	        	.set("font-size", "var(--lumo-font-size-l)")
+	        	.set("margin", "0");
         HorizontalLayout navBarHeader = new HorizontalLayout(toggle, title);
         navBarHeader.setDefaultVerticalComponentAlignment(Alignment.CENTER);
         navBarHeader.setWidthFull();
