@@ -27,9 +27,7 @@ public class CreateIntroView extends AppLayout {
 	public CreateIntroView() {
 		DrawerToggle toggle = new DrawerToggle();
         H1 title = new H1("Create Character");
-        title.getStyle()
-        	.set("font-size", "var(--lumo-font-size-l)")
-        	.set("margin", "0");
+        title.getStyle().set("font-size", "var(--lumo-font-size-l)").set("margin", "0");
         HorizontalLayout navBarHeader = new HorizontalLayout(toggle, title);
         navBarHeader.setDefaultVerticalComponentAlignment(Alignment.CENTER);
         navBarHeader.setWidthFull();
@@ -93,7 +91,7 @@ public class CreateIntroView extends AppLayout {
         
         Button nextButton = new Button("Let's Begin");
         nextButton.addClickListener(click -> {
-        	UI.getCurrent().navigate(ChooseClassView.class);
+        		UI.getCurrent().navigate(ChooseClassView.class);
         });
         nextButton.getStyle().set("left", "51.5rem").set("top", "0.5rem");
         header.add(heading, nextButton);

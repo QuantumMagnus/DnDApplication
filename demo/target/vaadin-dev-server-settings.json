@@ -1,0 +1,18 @@
+{
+  "frontendFolder": "C:/Users/trent/eclipse-workspace/demo/./src/main/frontend",
+  "themeFolder": "themes",
+  "themeResourceFolder": "C:/Users/trent/eclipse-workspace/demo/./src/main/frontend/generated/jar-resources",
+  "staticOutput": "C:/Users/trent/eclipse-workspace/demo/target/classes/META-INF/VAADIN/webapp/VAADIN/static",
+  "generatedFolder": "generated",
+  "statsOutput": "C:\\Users\\trent\\eclipse-workspace\\demo\\target\\classes\\META-INF\\VAADIN\\config",
+  "frontendBundleOutput": "C:\\Users\\trent\\eclipse-workspace\\demo\\target\\classes\\META-INF\\VAADIN\\webapp",
+  "devBundleOutput": "C:/Users/trent/eclipse-workspace/demo/target/dev-bundle/webapp",
+  "devBundleStatsOutput": "C:/Users/trent/eclipse-workspace/demo/target/dev-bundle/config",
+  "i18nOutput": "target/classes/vaadin-i18n",
+  "jarResourcesFolder": "C:/Users/trent/eclipse-workspace/demo/./src/main/frontend/generated/jar-resources",
+  "themeName": "",
+  "clientServiceWorkerSource": "C:\\Users\\trent\\eclipse-workspace\\demo\\target\\sw.ts",
+  "pwaEnabled": false,
+  "offlineEnabled": false,
+  "offlinePath": "'offline.html'"
+}

@@ -31,10 +31,12 @@
 		<vaadin.version>24.8.2</vaadin.version>
 	</properties>
 	<dependencies>
+		<!-- Add JDBC Driver later, use Oracle(?)
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-jdbc</artifactId>
 		</dependency>
+		-->
 		<dependency>
 			<groupId>com.vaadin</groupId>
 			<artifactId>vaadin-spring-boot-starter</artifactId>

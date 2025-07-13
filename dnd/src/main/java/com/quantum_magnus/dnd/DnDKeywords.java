@@ -3,27 +3,27 @@ package com.quantum_magnus.dnd;
 public class DnDKeywords {
 	
     public enum Class {
-    	Barbarian,
-    	Bard,
-    	Cleric,
-    	Druid,
-    	Fighter,
-    	Monk,
-    	Paladin,
-    	Ranger,
-    	Rogue,
-    	Sorcerer,
-    	Warlock,
-    	Wizard;
+	    	Barbarian,
+	    	Bard,
+	    	Cleric,
+	    	Druid,
+	    	Fighter,
+	    	Monk,
+	    	Paladin,
+	    	Ranger,
+	    	Rogue,
+	    	Sorcerer,
+	    	Warlock,
+	    	Wizard;
     }
     
     public enum Abilities{
-    	Strength, 
-    	Dexterity, 
-    	Constitution, 
-    	Intelligence, 
-    	Wisdom, 
-    	Charisma
+	    	Strength, 
+	    	Dexterity, 
+	    	Constitution, 
+	    	Intelligence, 
+	    	Wisdom, 
+	    	Charisma
     }
     
     public enum ClassComplexity {
@@ -58,6 +58,22 @@ public class DnDKeywords {
 		public boolean hasLevelUpTrait() {
 			return this.levelUpTrait;
 		}
+	}
+	
+	public enum AbilityScoreGenerationMethod {
+		StandardArray("Standard Array"), 
+		PointCost("Point Cost"), 
+		RandomGeneration("Random Generation");
+		
+		private final String displayName;
+
+	    AbilityScoreGenerationMethod(String displayName) {
+	        this.displayName = displayName;
+	    }
+
+	    public String getDisplayName() {
+	        return displayName;
+	    }
 	}
 	
 }

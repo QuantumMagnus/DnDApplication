@@ -2,7 +2,11 @@ package com.quantum_magnus.dnd;
 
 import com.quantum_magnus.dnd.DnDKeywords.Background;
 import com.quantum_magnus.dnd.DnDKeywords.Species;
+import com.quantum_magnus.grid_contents.Dragonborn;
+import com.quantum_magnus.grid_contents.Elf;
+import com.quantum_magnus.grid_contents.Tiefling;
 import com.vaadin.flow.component.Html;
+import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.applayout.AppLayout;
 import com.vaadin.flow.component.applayout.DrawerToggle;
 import com.vaadin.flow.component.button.Button;
@@ -37,9 +41,7 @@ public class DetermineOriginView extends AppLayout {
 
 		DrawerToggle toggle = new DrawerToggle();
         H1 title = new H1("Create Character");
-        title.getStyle()
-        	.set("font-size", "var(--lumo-font-size-l)")
-        	.set("margin", "0");
+        title.getStyle().set("font-size", "var(--lumo-font-size-l)").set("margin", "0");
         HorizontalLayout navBarHeader = new HorizontalLayout(toggle, title);
         navBarHeader.setDefaultVerticalComponentAlignment(Alignment.CENTER);
         navBarHeader.setWidthFull();
@@ -52,7 +54,7 @@ public class DetermineOriginView extends AppLayout {
 		drawerLayout.setCreateOpen(true);
         addToDrawer(drawerLayout);
         
-        // === Main Content: Three Panels Side-by-Side ===
+        // === Main Content: Three Panels ===
         VerticalLayout leftPanel = new VerticalLayout();
         leftPanel.setPadding(false);
         leftPanel.setWidth("40%");
@@ -116,7 +118,6 @@ public class DetermineOriginView extends AppLayout {
         lowerPanel.setPadding(false);
         lowerPanel.getStyle().set("overflow", "auto");
         lowerPanel.setWidthFull();
-        //lowerPanel.getStyle().set("background-color", "#f0f0f0");
         
         speciesField.addValueChangeListener(event -> {
             lowerPanel.removeAll(); // Clear previous card
@@ -183,7 +184,7 @@ public class DetermineOriginView extends AppLayout {
                 lowerPanel.setHeight(speciesHtml[3]);
                 
                 if (selected.equals(Species.Elf.name())) {
-	                H3 tableTitle = new H3("Elvin Lineages");
+	                H3 tableTitle = new H3("Elven Lineages");
 	                
 	                Grid<Elf> elfLineageTable = new Grid<Elf>(Elf.class, false);
 	                elfLineageTable.addColumn(Elf::getLineage).setHeader("Lineage").setFlexGrow(0);
@@ -198,10 +199,27 @@ public class DetermineOriginView extends AppLayout {
 	                elfLineageTable.setItems(elvenSubspecies);
 	                elfLineageTable.setAllRowsVisible(true);
 	                lowerPanel.add(details, tableTitle, elfLineageTable);
+                } else if (selected.equals(Species.Tiefling.name())) {
+                		H3 tableTitle = new H3("Fiendish Legacies");
+	                
+	                Grid<Tiefling> tieflingLgeacyTable = new Grid<Tiefling>(Tiefling.class, false);
+	                tieflingLgeacyTable.addColumn(Tiefling::getLegacy).setHeader("Lineage").setFlexGrow(0);
+	                tieflingLgeacyTable.addColumn(Tiefling::getLevelOne).setHeader("Level 1").setWidth("45rem").setFlexGrow(0);
+	                tieflingLgeacyTable.addColumn(Tiefling::getLevelThree).setHeader("Level 3").setWidth("17rem").setFlexGrow(0);
+	                tieflingLgeacyTable.addColumn(Tiefling::getLevelFive).setHeader("Level 5").setWidth("17rem").setFlexGrow(0);
+	                tieflingLgeacyTable.addThemeVariants(GridVariant.LUMO_WRAP_CELL_CONTENT);
+	                tieflingLgeacyTable.getStyle().set("overflow", "hidden");
+	                tieflingLgeacyTable.setWidthFull();
+	
+	                Tiefling[] tieflingSubspecies = Tiefling.getTieflingLegacies();
+	                tieflingLgeacyTable.setItems(tieflingSubspecies);
+	                tieflingLgeacyTable.setAllRowsVisible(true);
+	                lowerPanel.add(details, tableTitle, tieflingLgeacyTable);
                 } else {
                 		lowerPanel.add(details);
                 }
             }
+            lowerPanel.getElement().executeJs("this.scrollIntoView({ behavior: 'smooth', block: 'start' })");
         });
         
         leftPanel.add(originBlurb, backgroundSelection, characterBackgroundBlurb, speciesSelection, speciesBlurb);
@@ -213,6 +231,9 @@ public class DetermineOriginView extends AppLayout {
         H1 heading = new H1("Step 2: Determine Origin");
         
         Button nextButton = new Button("Next Step");
+        nextButton.addClickListener(click -> {
+        		UI.getCurrent().navigate(AbilityScoresView.class);
+        });
         nextButton.getStyle().set("left", "50rem").set("top", "0.5rem");
         header.add(heading, nextButton);
         

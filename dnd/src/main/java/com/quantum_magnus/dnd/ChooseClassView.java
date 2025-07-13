@@ -2,6 +2,7 @@ package com.quantum_magnus.dnd;
 
 import com.quantum_magnus.dnd.DnDKeywords.Class;
 import com.vaadin.flow.component.Html;
+import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.accordion.Accordion;
 import com.vaadin.flow.component.applayout.AppLayout;
 import com.vaadin.flow.component.applayout.DrawerToggle;
@@ -33,9 +34,7 @@ public class ChooseClassView extends AppLayout {
 				
 		DrawerToggle toggle = new DrawerToggle();
         H1 title = new H1("Create Character");
-        title.getStyle()
-        	.set("font-size", "var(--lumo-font-size-l)")
-        	.set("margin", "0");
+        title.getStyle().set("font-size", "var(--lumo-font-size-l)").set("margin", "0");
         HorizontalLayout navBarHeader = new HorizontalLayout(toggle, title);
         navBarHeader.setDefaultVerticalComponentAlignment(Alignment.CENTER);
         navBarHeader.setWidthFull();
@@ -89,9 +88,7 @@ public class ChooseClassView extends AppLayout {
         Accordion barbarian = new Accordion();
         String barbarianHtml = DnDClasses.getClassText(Class.Barbarian);
         Html barbarianContent = new Html(barbarianHtml);
-        VerticalLayout barbarianInfo = new VerticalLayout(
-        	barbarianContent
-        );
+        VerticalLayout barbarianInfo = new VerticalLayout(barbarianContent);
         barbarianInfo.setPadding(false);
         barbarianInfo.setSpacing(false);
         barbarian.add("Barbarian", barbarianInfo);
@@ -102,9 +99,7 @@ public class ChooseClassView extends AppLayout {
         Accordion bard = new Accordion();
         String bardHtml = DnDClasses.getClassText(Class.Bard);
         Html bardContent = new Html(bardHtml);
-        VerticalLayout bardInfo = new VerticalLayout(
-            bardContent
-        );
+        VerticalLayout bardInfo = new VerticalLayout(bardContent);
         bardInfo.setPadding(false);
         bardInfo.setSpacing(false);
         bard.add("Bard", bardInfo);
@@ -115,9 +110,7 @@ public class ChooseClassView extends AppLayout {
         Accordion cleric = new Accordion();
         String clericHtml = DnDClasses.getClassText(Class.Cleric);
         Html clericContent = new Html(clericHtml);
-        VerticalLayout clericInfo = new VerticalLayout(
-            clericContent
-        );
+        VerticalLayout clericInfo = new VerticalLayout(clericContent);
         clericInfo.setPadding(false);
         clericInfo.setSpacing(false);
         cleric.add("Cleric", clericInfo);
@@ -128,9 +121,7 @@ public class ChooseClassView extends AppLayout {
         Accordion druid = new Accordion();
         String druidHtml = DnDClasses.getClassText(Class.Druid);
         Html druidContent = new Html(druidHtml);
-        VerticalLayout druidInfo = new VerticalLayout(
-            druidContent
-        );
+        VerticalLayout druidInfo = new VerticalLayout(druidContent);
         druidInfo.setPadding(false);
         druidInfo.setSpacing(false);
         druid.add("Druid", druidInfo);
@@ -141,9 +132,7 @@ public class ChooseClassView extends AppLayout {
         Accordion fighter = new Accordion();
         String fighterHtml = DnDClasses.getClassText(Class.Fighter);
         Html fighterContent = new Html(fighterHtml);
-        VerticalLayout fighterInfo = new VerticalLayout(
-            fighterContent
-        );
+        VerticalLayout fighterInfo = new VerticalLayout(fighterContent);
         fighterInfo.setPadding(false);
         fighterInfo.setSpacing(false);
         fighter.add("Fighter", fighterInfo);
@@ -154,9 +143,7 @@ public class ChooseClassView extends AppLayout {
         Accordion monk = new Accordion();
         String monkHtml = DnDClasses.getClassText(Class.Monk);
         Html monkContent = new Html(monkHtml);
-        VerticalLayout monkInfo = new VerticalLayout(
-            monkContent
-        );
+        VerticalLayout monkInfo = new VerticalLayout(monkContent);
         monkInfo.setPadding(false);
         monkInfo.setSpacing(false);
         monk.add("Monk", monkInfo);
@@ -167,9 +154,7 @@ public class ChooseClassView extends AppLayout {
         Accordion paladin = new Accordion();
         String paladinHtml = DnDClasses.getClassText(Class.Paladin);
         Html paladinContent = new Html(paladinHtml);
-        VerticalLayout paladinInfo = new VerticalLayout(
-            paladinContent
-        );
+        VerticalLayout paladinInfo = new VerticalLayout(paladinContent);
         paladinInfo.setPadding(false);
         paladinInfo.setSpacing(false);
         paladin.add("Paladin", paladinInfo);
@@ -180,11 +165,10 @@ public class ChooseClassView extends AppLayout {
         Accordion ranger = new Accordion();
         String rangerHtml = DnDClasses.getClassText(Class.Ranger);
         Html rangerContent = new Html(rangerHtml);
-        VerticalLayout rangerInfo = new VerticalLayout(
-            rangerContent
-        );
+        VerticalLayout rangerInfo = new VerticalLayout(rangerContent);
         rangerInfo.setPadding(false);
         rangerInfo.setSpacing(false);
+        rangerInfo.setHeight("28em");
         ranger.add("Ranger", rangerInfo);
         accordions[7] = ranger;
         ranger.close();
@@ -193,11 +177,10 @@ public class ChooseClassView extends AppLayout {
         Accordion rogue = new Accordion();
         String rogueHtml = DnDClasses.getClassText(Class.Rogue);
         Html rogueContent = new Html(rogueHtml);
-        VerticalLayout rogueInfo = new VerticalLayout(
-            rogueContent
-        );
+        VerticalLayout rogueInfo = new VerticalLayout(rogueContent);
         rogueInfo.setPadding(false);
         rogueInfo.setSpacing(false);
+        rogueInfo.setHeight("32em");
         rogue.add("Rogue", rogueInfo);
         accordions[8] = rogue;
         rogue.close();
@@ -207,11 +190,10 @@ public class ChooseClassView extends AppLayout {
         Accordion sorcerer = new Accordion();
         String sorcererHtml = DnDClasses.getClassText(Class.Sorcerer);
         Html sorcererContent = new Html(sorcererHtml);
-        VerticalLayout sorcererInfo = new VerticalLayout(
-            sorcererContent
-        );
+        VerticalLayout sorcererInfo = new VerticalLayout(sorcererContent);
         sorcererInfo.setPadding(false);
         sorcererInfo.setSpacing(false);
+        sorcererInfo.setHeight("36em");
         sorcerer.add("Sorcerer", sorcererInfo);
         accordions[9] = sorcerer;
         sorcerer.close();
@@ -220,11 +202,10 @@ public class ChooseClassView extends AppLayout {
         Accordion warlock = new Accordion();
         String warlockHtml = DnDClasses.getClassText(Class.Warlock);
         Html warlockContent = new Html(warlockHtml);
-        VerticalLayout warlockInfo = new VerticalLayout(
-            warlockContent
-        );
+        VerticalLayout warlockInfo = new VerticalLayout(warlockContent);
         warlockInfo.setPadding(false);
         warlockInfo.setSpacing(false);
+        warlockInfo.setHeight("40em");
         warlock.add("Warlock", warlockInfo);
         accordions[10] = warlock;
         warlock.close();
@@ -233,9 +214,7 @@ public class ChooseClassView extends AppLayout {
         Accordion wizard = new Accordion();
         String wizardHtml = DnDClasses.getClassText(Class.Wizard);
         Html wizardContent = new Html(wizardHtml);
-        VerticalLayout wizardInfo = new VerticalLayout(
-            wizardContent
-        );
+        VerticalLayout wizardInfo = new VerticalLayout(wizardContent);
         wizardInfo.setPadding(false);
         wizardInfo.setSpacing(false);
         wizardInfo.setHeight("44em");
@@ -245,62 +224,62 @@ public class ChooseClassView extends AppLayout {
         
         classField.addValueChangeListener(event -> {
             for (int idx = 0; idx < 12; idx++) {
-            	accordions[idx].close();
+            		accordions[idx].close();
             }
             String selected = event.getValue().name();
             if (selected != null) {
                 switch (selected) {
                 case "Barbarian":
-                	accordions[0].open(0);
-                	accordions[0].getElement().executeJs("this.scrollIntoView({ behavior: 'smooth', block: 'start' })");
+	                	accordions[0].open(0);
+	                	accordions[0].getElement().executeJs("this.scrollIntoView({ behavior: 'smooth', block: 'start' })");
                 	break;
                 case "Bard":
-                	accordions[1].open(0);
-                	accordions[1].getElement().executeJs("this.scrollIntoView({ behavior: 'smooth', block: 'start' })");
+	                	accordions[1].open(0);
+	                	accordions[1].getElement().executeJs("this.scrollIntoView({ behavior: 'smooth', block: 'start' })");
                 	break;
                 case "Cleric":
-                	accordions[2].open(0);
-                	accordions[2].getElement().executeJs("this.scrollIntoView({ behavior: 'smooth', block: 'start' })");
+	                	accordions[2].open(0);
+	                	accordions[2].getElement().executeJs("this.scrollIntoView({ behavior: 'smooth', block: 'start' })");
                 	break;
                 case "Druid":
-                	accordions[3].open(0);
-                	accordions[3].getElement().executeJs("this.scrollIntoView({ behavior: 'smooth', block: 'start' })");
+	                	accordions[3].open(0);
+	                	accordions[3].getElement().executeJs("this.scrollIntoView({ behavior: 'smooth', block: 'start' })");
                 	break;
                 case "Fighter":
-                	accordions[4].open(0);
-                	accordions[4].getElement().executeJs("this.scrollIntoView({ behavior: 'smooth', block: 'start' })");
+	                	accordions[4].open(0);
+	                	accordions[4].getElement().executeJs("this.scrollIntoView({ behavior: 'smooth', block: 'start' })");
                 	break;
                 case "Monk":
-                	accordions[5].open(0);
-                	accordions[5].getElement().executeJs("this.scrollIntoView({ behavior: 'smooth', block: 'start' })");
+	                	accordions[5].open(0);
+	                	accordions[5].getElement().executeJs("this.scrollIntoView({ behavior: 'smooth', block: 'start' })");
                 	break;
                 case "Paladin":
-                	accordions[6].open(0);
-                	accordions[6].getElement().executeJs("this.scrollIntoView({ behavior: 'smooth', block: 'start' })");
+	                	accordions[6].open(0);
+	                	accordions[6].getElement().executeJs("this.scrollIntoView({ behavior: 'smooth', block: 'start' })");
                 	break;
                 case "Ranger":
-                	accordions[7].open(0);
-                	accordions[7].getElement().executeJs("this.scrollIntoView({ behavior: 'smooth', block: 'start' })");
+	                	accordions[7].open(0);
+	                	accordions[7].getElement().executeJs("this.scrollIntoView({ behavior: 'smooth', block: 'start' })");
                 	break;
                 case "Rogue":
-                	accordions[8].open(0);
-                	accordions[8].getElement().executeJs("this.scrollIntoView({ behavior: 'smooth', block: 'start' })");
+	                	accordions[8].open(0);
+	                	accordions[8].getElement().executeJs("this.scrollIntoView({ behavior: 'smooth', block: 'start' })");
                 	break;
                 case "Sorcerer":
-                	accordions[9].open(0);
-                	accordions[9].getElement().executeJs("this.scrollIntoView({ behavior: 'smooth', block: 'start' })");
+	                	accordions[9].open(0);
+	                	accordions[9].getElement().executeJs("this.scrollIntoView({ behavior: 'smooth', block: 'start' })");
                 	break;
                 case "Warlock":
-                	accordions[10].open(0);
-                	accordions[10].getElement().executeJs("this.scrollIntoView({ behavior: 'smooth', block: 'start' })");
+	                	accordions[10].open(0);
+	                	accordions[10].getElement().executeJs("this.scrollIntoView({ behavior: 'smooth', block: 'start' })");
                 	break;
                 case "Wizard":
-                	accordions[11].open(0);
-                	accordions[11].getElement().executeJs("this.scrollIntoView({ behavior: 'smooth', block: 'start' })");
+	                	accordions[11].open(0);
+	                	accordions[11].getElement().executeJs("this.scrollIntoView({ behavior: 'smooth', block: 'start' })");
                 	break;
                 default: 
-                	for (int idx = 0; idx < 12; idx++) {
-                    	accordions[idx].close();
+	                	for (int idx = 0; idx < 12; idx++) {
+	                    	accordions[idx].close();
                     }
                 }
             }
@@ -315,7 +294,10 @@ public class ChooseClassView extends AppLayout {
         H1 heading = new H1("Step 1: Choose a Class");
         
         Button nextButton = new Button("Next Step");
-        nextButton.getStyle().set("left", "50rem").set("top", "0.5rem");
+        nextButton.addClickListener(click -> {
+        		UI.getCurrent().navigate(DetermineOriginView.class);
+        });
+        nextButton.getStyle().set("left", "53.33rem").set("top", "0.5rem");
         header.add(heading, nextButton);
         
         VerticalLayout bottomPanel = new VerticalLayout(header);

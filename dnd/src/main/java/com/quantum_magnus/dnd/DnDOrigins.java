@@ -563,7 +563,7 @@ public class DnDOrigins {
 		} else if (species.equals(Species.Elf.name())) {
 			image = new Image("species/elf.jpg", "Elf");
 		} else if (species.equals(Species.Gnome.name())) {
-			image = new Image("species/Gnome.jpg", "Gnome");
+			image = new Image("species/gnome.jpg", "Gnome");
 		} else if (species.equals(Species.Goliath.name())) {
 			image = new Image("species/goliath.jpg", "Goliath");
 		} else if (species.equals(Species.Halfling.name())) {
@@ -825,140 +825,304 @@ public class DnDOrigins {
 			result[0] = """
 	         	    <div style="overflow: hidden;">
 		     	        <p style='text-align: justify; font-size: 15px;'>
-							
+							Gnomes are magical folk created by gods of invention, illusions, and life underground. The 
+							earliest gnomes were seldom seen by other folk due to the gnomes' secretive nature and their 
+							propensity for living in forests and burrows. What they lacked in size, they make up for in 
+							cleverness. They confounded predators with traps and labyrinthine tunnels. They also learned 
+							magic from gods like Garl Glittergold, Baervan Wildwanderer, and Baravar Cloakshadow, who 
+							visited them in disguise. That magic eventually created the lineages of forest gnomes and rock 
+							gnomes.<br/>
+							&nbsp;&nbsp;Gnomes are petite folk with big eyes and pointed ears, who live around 425 years. 
+							Many gnomes like the feeling of a roof over their head, even if that "roof" is nothing more 
+							than a hat.<br/>
 		     	        </p>
 		     	    </div>
 		     	""";
 			result[1] = """
 	         	    <div style="overflow: hidden;">
 		     	        <p style='text-align: justify; font-size: 15px;'>
-							
+					 	    <b>Creature Type:</b> Humanoid<br/>
+							<b>Size:</b> Small (about 3–4 cm tall)<br/>
+							<b>Speed:</b> 30 feet<br/><br/>
+							As a Gnome, you have these special traits.<br/>
+							&nbsp;&nbsp;<b><i>Darkvision.</i></b> You have Darkvision with a range of 60 feet.<br/>
+							&nbsp;&nbsp;<b><i>Gnomish Cunning.</i></b> You have Advantage on Intelligence, Wisdom, and 
+							Charisma saving throws.<br/>
+							&nbsp;&nbsp;<b><i>Gnomish Lineage.</i></b> You are part of a lineage that grants you 
+							supernatural abilities. Choose one of the following options on the right; whichever one you 
+							choose, Intelligence, Wisdom, or Charisma is your spellcasting ability for the spells you cast 
+							with this trait (choose the ability when you select the lineage):<br/>
 						</p>
 		     	    </div>
 		     	""";
 			result[2] = """
 	         	    <div style="overflow: hidden;">
 		     	        <p style='text-align: justify; font-size: 15px;'>
-							
+							<b>Forest Gnome.</b> You know the Minor Illusion cantrip. You also always have the Speak with 
+							Animals spell prepared. You can cast it without a spell slot a number of times equal to your 
+							Proficiency Bonus, and you regain all expended uses when you finish a Long Rest. You can also 
+							use any spell slots you have to cast the spell.<br/> 
+							<b>Rock Gnome.</b> You know the Mending and Prestidigitation cantrips. In addition, you can 
+							spend 10 minutes casting Prestidigitation to create a Tiny clockwork device (AC 5, 1 HP), such 
+							as a toy, fire starter, or music box. When you create the device, you determine its function by 
+							choosing one effect from Prestidigitation; the device produces that effect whenever you or 
+							another creature takes a Bonus Action to activate it with a touch. If the chosen effect has 
+							options within it, you choose one of those options for the device when you create it. For 
+							example, if you choose the spell’s ignite-extinguish effect, you determine whether the device 
+							ignites or extinguishes fire; the device doesn’t do both. You can have three such devices in 
+							existence at a time, and each falls apart 8 hours after its creation or when you dismantle it 
+							with a touch as a Utilize action.<br/>
 		     	        </p>
 		     	    </div>
 		     	""";
-			result[3] = "82em";
+			result[3] = "54em";
 		} else if (speciesEnum == Species.Goliath) {
 			result[0] = """
 	         	    <div style="overflow: hidden;">
 		     	        <p style='text-align: justify; font-size: 15px;'>
-							
+							Towering over most folk, goliaths are distant descendants of giants. Each goliath bears the 
+							favors of the first giants–favors that manifest in various supernatural boons, including the 
+							ability to quickly grow and temporarily approach the height of goliaths' gigantic kin.<br/>
+							&nbsp;&nbsp;Golaiths have physical characteristics that are reminiscent of the giants in their 
+							family lines. For example, some goliaths look like stone giants, while others resemble fire 
+							giants. Whatever giants they count as kin, goliaths have forged their own path in the 
+							multiverse–unencumbered by the internecine conflicts that have giantkind for ages–and seek 
+							heights above those reached by their ancestors.<br/>
 		     	        </p>
 		     	    </div>
 		     	""";
 			result[1] = """
 	         	    <div style="overflow: hidden;">
 		     	        <p style='text-align: justify; font-size: 15px;'>
-							
+							<b>Creature Type:</b> Humanoid<br/>
+							<b>Size:</b> Medium (about 7–8 feet tall)<br/>
+							<b>Speed:</b> 35 feet<br/><br/>
+							As a Goliath, you have these special traits.<br/>
+							&nbsp;&nbsp;<b><i>Giant Ancestry.</i></b> You are descended from Giants. Choose one of the 
+							following benefits—a supernatural boon from your ancestry; you can use the chosen benefit a 
+							number of times equal to your Proficiency Bonus, and you regain all expended uses when you 
+							finish a Long Rest:<br/><br/>
+							<b>Cloud’s Jaunt (Cloud Giant).</b> As a Bonus Action, you magically teleport up to 30 feet to 
+							an unoccupied space you can see.<br/>
+							<b>Fire’s Burn (Fire Giant).</b> When you hit a target with an attack roll and deal damage to 
+							it, you can also deal 1d10 Fire damage to that target.<br/>
+							<b>Frost’s Chill (Frost Giant).</b> When you hit a target with an attack roll and deal damage 
+							to it, you can also deal 1d6 Cold damage to that target and reduce its Speed by 10 feet until 
+							the start of your next turn.<br/>
 						</p>
 		     	    </div>
 		     	""";
 			result[2] = """
 	         	    <div style="overflow: hidden;">
 		     	        <p style='text-align: justify; font-size: 15px;'>
-							
+							<b>Hill’s Tumble (Hill Giant).</b> When you hit a Large or smaller creature with an attack roll 
+							and deal damage to it, you can give that target the Prone condition.</br>
+							<b>Stone’s Endurance (Stone Giant).</b> When you take damage, you can take a Reaction to roll 
+							1d12. Add your Constitution modifier to the number rolled and reduce the damage by that 
+							total.<br/>
+							<b>Storm’s Thunder (Storm Giant).</b> When you take damage from a creature within 60 feet of 
+							you, you can take a Reaction to deal 1d8 Thunder damage to that creature.<br/>
+							&nbsp;&nbsp;<b><i>Large Form.</i></b> Starting at character level 5, you can change your size 
+							to Large as a Bonus Action if you’re in a big enough space. This transformation lasts for 10 
+							minutes or until you end it (no action required). For that duration, you have Advantage on 
+							Strength checks, and your Speed increases by 10 feet. Once you use this trait, you can’t use it 
+							again until you finish a Long Rest.<br/>
+							&nbsp;&nbsp;<b><i>Powerful Build.</i></b> You have Advantage on any ability check you make to 
+							end the Grappled condition. You also count as one size larger when determining your carrying 
+							capacity.<br/>
 		     	        </p>
 		     	    </div>
 		     	""";
-			result[3] = "82em";
+			result[3] = "56em";
 		} else if (speciesEnum == Species.Halfling) {
 			result[0] = """
 	         	    <div style="overflow: hidden;">
 		     	        <p style='text-align: justify; font-size: 15px;'>
-							
+							Cherished and guided by gods who value life, home, and hearth, halflings gravitate toward 
+							bucolic havens where family and community help shape their lives. That said, many halflings 
+							possess a brave and adventurous spirit that leads them on journeys of discovery, affording them 
+							the chance to explore a bigger world and make new friends along the way. Their size—similar to 
+							that of a human child—helps them pass through crowds unnoticed and slip through tight 
+							spaces.<br/>
+							&nbsp;&nbsp;Anyone who has spent time around halflings, particularly halfling adventurers, has 
+							likely witnessed the storied “luck of the halflings” in action. When a halfling is in mortal 
+							danger, an unseen force seems to intervene on the halfling’s behalf. Many halflings believe in 
+							the power of luck, and they attribute their unusual gift to one or more of their benevolent 
+							gods, including Yondalla, Brandobaris, and Charmalaine. The same gift might contribute to their 
+							robust life spans (about 150 years).<br/>
+							&nbsp;&nbsp;Halfling communities come in all varieties. For every sequestered shire tucked away 
+							in an unspoiled part of the world, there’s a crime syndicate like the Boromar Clan in the 
+							Eberron setting or a territorial mob of halflings like those in the Dark Sun setting.<br/>
+							&nbsp;&nbsp;Halflings who prefer to live underground are sometimes called strongheart halflings 
+							or stouts. Nomadic halflings, as well as those who live among humans and other tall folk, are 
+							sometimes called lightfoot halflings or tallfellows.<br/>
 		     	        </p>
 		     	    </div>
 		     	""";
 			result[1] = """
 	         	    <div style="overflow: hidden;">
 		     	        <p style='text-align: justify; font-size: 15px;'>
-							
+							<b>Creature Type:</b> Humanoid<br/>
+							<b>Size:</b> Small (about 2–3 feet tall)<br/>
+							<b>Speed:</b> 30 feet<br/><br/>
+							As a Halfling, you have these special traits.<br/>
+							&nbsp;&nbsp;<b><i>Brave.</i></b> You have Advantage on saving throws you make to avoid or end 
+							the Frightened condition.<br/>
 						</p>
 		     	    </div>
 		     	""";
 			result[2] = """
 	         	    <div style="overflow: hidden;">
 		     	        <p style='text-align: justify; font-size: 15px;'>
-							
+							&nbsp;&nbsp;<b><i>Halfling Nimbleness.</i></b> You can move through the space of any creature 
+							that is a size larger than you, but you can’t stop in the same space.<br/>
+							&nbsp;&nbsp;<b><i>Luck.</i></b> When you roll a 1 on the d20 of a D20 Test, you can reroll the 
+							die, and you must use the new roll.<br/>
+							&nbsp;&nbsp;<b><i>Naturally Stealthy.</i></b> You can take the Hide action even when you are 
+							obscured only by a creature that is at least one size larger than you.<br/>
 		     	        </p>
 		     	    </div>
 		     	""";
-			result[3] = "82em";
+			result[3] = "53em";
 		} else if (speciesEnum == Species.Human) {
 			result[0] = """
 	         	    <div style="overflow: hidden;">
 		     	        <p style='text-align: justify; font-size: 15px;'>
-							
+							Found throughout the multiverse, humans are as varied as they are numerous, and they endeavor 
+							to achieve as much as they can in the years they are given. Their ambition and resourcefulness 
+							are commended, respected, and feared on many worlds.<br/>
+							&nbsp;&nbsp;Humans are as diverse in appearance as the people of Earth, and they have many 
+							gods. Scholars dispute the origin of humanity, but one of the earliest known human gatherings 
+							is said to have occurred in Sigil, the torus-shaped city at the center of the multiverse and 
+							the place where the Common language was born. From there, humans could have spread to every 
+							part of the multiverse, bringing the City of Doors’ cosmopolitanism with them.<br/>
 		     	        </p>
 		     	    </div>
 		     	""";
 			result[1] = """
 	         	    <div style="overflow: hidden;">
 		     	        <p style='text-align: justify; font-size: 15px;'>
-							
+							<b>Creature Type:</b> Humanoid<br/>
+							<b>Size:</b> Medium (about 4–7 feet tall) or Small (about 2–4 feet tall), chosen when you 
+							select this species<br/>
+							<b>Speed:</b> 30 feet<br/><br/>
 						</p>
 		     	    </div>
 		     	""";
 			result[2] = """
 	         	    <div style="overflow: hidden;">
 		     	        <p style='text-align: justify; font-size: 15px;'>
-							
+							As a Human, you have these special traits.<br/>
+							&nbsp;&nbsp;<b><i>Resourceful.</i></b> You gain Heroic Inspiration whenever you finish a Long 
+							Rest.<br/>
+							&nbsp;&nbsp;<b><i>Skillful.</i></b> You gain proficiency in one skill of your choice.<br/>
+							&nbsp;&nbsp;<b><i>Versatile.</i></b> You gain an Origin feat of your choice.<br/>
 		     	        </p>
 		     	    </div>
 		     	""";
-			result[3] = "82em";
+			result[3] = "50em";// needs some filler text
 		} else if (speciesEnum == Species.Orc) {
 			result[0] = """
 	         	    <div style="overflow: hidden;">
 		     	        <p style='text-align: justify; font-size: 15px;'>
-							
+							Orcs trace their creation to Gruumsh, a powerful god who roamed the wide open spaces of the 
+							Material Plane. Gruumsh equipped his children with gifts to help them wander great plains, vast 
+							caverns, and churning seas and to face the monsters that lurk there. Even when they turn their 
+							devotion to other gods, orcs retain Gruumsh’s gifts: endurance, determination, and the ability 
+							to see in darkness.<br/>
+							&nbsp;&nbsp;Orcs are, on average, tall and broad. They have gray skin, ears that are sharply 
+							pointed, and prominent lower canines that resemble small tusks. Orc youths on some worlds are 
+							told about their ancestors’ great travels and travails. Inspired by those tales, many of those 
+							orcs wonder when Gruumsh will call on them to match the heroic deeds of old and if they will 
+							prove worthy of his favor. Other orcs are happy to leave old tales in the past and find their 
+							own way.<br/>
 		     	        </p>
 		     	    </div>
 		     	""";
 			result[1] = """
 	         	    <div style="overflow: hidden;">
 		     	        <p style='text-align: justify; font-size: 15px;'>
-							
+							<b>Creature Type:</b> Humanoid<br/>
+							<b>Size:</b> Medium (about 6–7 feet tall)<br/>
+							<b>Speed:</b> 30 feet<br/><br/>
+							As an Orc, you have these special traits.<br/>
+							&nbsp;&nbsp;<b><i>Adrenaline Rush.</i></b> You can take the Dash action as a Bonus Action. When 
+							you do so, you gain a number of Temporary Hit Points equal to your Proficiency Bonus.<br/>
 						</p>
 		     	    </div>
 		     	""";
 			result[2] = """
 	         	    <div style="overflow: hidden;">
 		     	        <p style='text-align: justify; font-size: 15px;'>
-							
+							&nbsp;&nbsp;You can use Adrenaline Rush a number of times equal to your Proficiency Bonus, and 
+							you regain all expended uses when you finish a Short or Long Rest.</br>
+							&nbsp;&nbsp;<b><i>Darkvision.</i></b> You have Darkvision with a range of 120 feet.<br/>
+							&nbsp;&nbsp;<b><i>Relentless Endurance.</i></b> When you are reduced to 0 Hit Points but not 
+							killed outright, you can drop to 1 Hit Point instead. Once you use this trait, you can’t do so 
+							again until you finish a Long Rest.<br/>
 		     	        </p>
 		     	    </div>
 		     	""";
-			result[3] = "82em";
+			result[3] = "51em";
 		} else { // if speciesEnum == Tiefling
 			result[0] = """
 	         	    <div style="overflow: hidden;">
 		     	        <p style='text-align: justify; font-size: 15px;'>
-							
+							Tieflings are either born in the Lower Planes or have fiendish ancestors who originated there. 
+							A tiefling (pronounced TEE-fling) is linked by blood to a devil, a demon, or some other Fiend. 
+							This connection to the Lower Planes is the tiefling’s fiendish legacy, which comes with the 
+							promise of power yet has no effect on the tiefling’s moral outlook.<br/>
+							&nbsp;&nbsp;A tiefling chooses whether to embrace or lament their fiendish legacy. The three 
+							legacies are described below.<be/>
 		     	        </p>
 		     	    </div>
 		     	""";
 			result[1] = """
 	         	    <div style="overflow: hidden;">
 		     	        <p style='text-align: justify; font-size: 15px;'>
-							
+							<H3>Abyssal</H3>
+							The entropy of the Abyss, the chaos of Pandemonium, and the despair of Carceri call to 
+							tieflings who have the abyssal legacy. Horns, fur, tusks, and peculiar scents are common 
+							physical features of such tieflings, most of whom have the blood of demons coursing through 
+							their veins.<br/><br/>
+							<H3>Chthonic</H3>
+							Tieflings who have the chthonic legacy feel not only the tug of Carceri but also the greed of 
+							Gehenna and the gloom of Hades. Some of these tieflings look cadaverous. Others possess the 
+							unearthly beauty of a succubus, or they have physical features in common, with a night hag, a 
+							yugoloth, or some other Neutral Evil fiendish ancestor.<br/><br/>
+							<H3>Infernal</H3>
+							The infernal legacy connects tieflings not only to Gehenna but also the Nine Hells and the 
+							raging battlefields of Acheron. Horns, spines, tails, golden eyes, and a faint odor of sulfur 
+							or smoke are common physical features of such tieflings, most of who trace their ancestry to 
+							devils.<br/>
 						</p>
 		     	    </div>
 		     	""";
 			result[2] = """
 	         	    <div style="overflow: hidden;">
 		     	        <p style='text-align: justify; font-size: 15px;'>
-							
+							<b>Creature Type:</b> Humanoid<br/>
+							<b>Size:</b> Medium (about 4–7 feet tall) or Small (about 3–4 feet tall), chosen when you 
+							select this species<br/>
+							<b>Speed:</b> 30 feet<br/><br/>
+							As a Tiefling, you have the following special traits.<br/>
+							&nbsp;&nbsp;<b><i>Darkvision.</i></b> You have Darkvision with a range of 60 feet.<br/>
+							&nbsp;&nbsp;<b><i>Fiendish Legacy.</i></b> You are the recipient of a legacy that grants you 
+							supernatural abilities. Choose a legacy from the Fiendish Legacies table. You gain the level 1 
+							benefit of the chosen legacy.<br/>
+							&nbsp;&nbsp;When you reach character levels 3 and 5, you learn a higher-level spell, as shown 
+							on the table. You always have that spell prepared. You can cast it once without a spell slot, 
+							and you regain the ability to cast it in that way when you finish a Long Rest. You can also 
+							cast the spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, 
+							or Charisma is your spellcasting ability for the spells you cast with this trait (choose the 
+							ability when you select the legacy).<br/>
+						    &nbsp;&nbsp;<b><i>Otherworldly Presence.</i></b> You know the Thaumaturgy cantrip. When you 
+						    cast it with this trait, the spell uses the same spellcasting ability you use for your Fiendish 
+						    Legacy Trait.<br/>
 		     	        </p>
 		     	    </div>
 		     	""";
-			result[3] = "82em";
+			result[3] = "75em";
 		}
 		
 		return result;
