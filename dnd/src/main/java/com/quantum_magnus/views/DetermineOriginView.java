@@ -1,10 +1,13 @@
-package com.quantum_magnus.dnd;
+package com.quantum_magnus.views;
 
+import com.quantum_magnus.dnd.CharacterData;
+import com.quantum_magnus.dnd.DnDOrigins;
+import com.quantum_magnus.dnd.NavigationBar;
 import com.quantum_magnus.dnd.DnDKeywords.Background;
 import com.quantum_magnus.dnd.DnDKeywords.Species;
-import com.quantum_magnus.grid_contents.Dragonborn;
-import com.quantum_magnus.grid_contents.Elf;
-import com.quantum_magnus.grid_contents.Tiefling;
+import com.quantum_magnus.tables.Dragonborn;
+import com.quantum_magnus.tables.Elf;
+import com.quantum_magnus.tables.Tiefling;
 import com.vaadin.flow.component.Html;
 import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.applayout.AppLayout;
@@ -27,18 +30,17 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.orderedlayout.FlexComponent.Alignment;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
+import com.vaadin.flow.server.VaadinSession;
 
 @Route("create/determine-origin")
 @PageTitle("Determine Origin")
 public class DetermineOriginView extends AppLayout {
-
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 	
 	public DetermineOriginView() {
-
 		DrawerToggle toggle = new DrawerToggle();
         H1 title = new H1("Create Character");
         title.getStyle().set("font-size", "var(--lumo-font-size-l)").set("margin", "0");
@@ -202,19 +204,22 @@ public class DetermineOriginView extends AppLayout {
                 } else if (selected.equals(Species.Tiefling.name())) {
                 		H3 tableTitle = new H3("Fiendish Legacies");
 	                
-	                Grid<Tiefling> tieflingLgeacyTable = new Grid<Tiefling>(Tiefling.class, false);
-	                tieflingLgeacyTable.addColumn(Tiefling::getLegacy).setHeader("Lineage").setFlexGrow(0);
-	                tieflingLgeacyTable.addColumn(Tiefling::getLevelOne).setHeader("Level 1").setWidth("45rem").setFlexGrow(0);
-	                tieflingLgeacyTable.addColumn(Tiefling::getLevelThree).setHeader("Level 3").setWidth("17rem").setFlexGrow(0);
-	                tieflingLgeacyTable.addColumn(Tiefling::getLevelFive).setHeader("Level 5").setWidth("17rem").setFlexGrow(0);
-	                tieflingLgeacyTable.addThemeVariants(GridVariant.LUMO_WRAP_CELL_CONTENT);
-	                tieflingLgeacyTable.getStyle().set("overflow", "hidden");
-	                tieflingLgeacyTable.setWidthFull();
+	                Grid<Tiefling> tieflingLegacyTable = new Grid<Tiefling>(Tiefling.class, false);
+	                tieflingLegacyTable.addColumn(Tiefling::getLegacy).setHeader("Lineage").setFlexGrow(0);
+	                tieflingLegacyTable.addColumn(Tiefling::getLevelOne).setHeader("Level 1")
+	                		.setWidth("45rem").setFlexGrow(0);
+	                tieflingLegacyTable.addColumn(Tiefling::getLevelThree).setHeader("Level 3")
+	                		.setWidth("17rem").setFlexGrow(0);
+	                tieflingLegacyTable.addColumn(Tiefling::getLevelFive).setHeader("Level 5")
+	                		.setWidth("17rem").setFlexGrow(0);
+	                tieflingLegacyTable.addThemeVariants(GridVariant.LUMO_WRAP_CELL_CONTENT);
+	                tieflingLegacyTable.getStyle().set("overflow", "hidden");
+	                tieflingLegacyTable.setWidthFull();
 	
 	                Tiefling[] tieflingSubspecies = Tiefling.getTieflingLegacies();
-	                tieflingLgeacyTable.setItems(tieflingSubspecies);
-	                tieflingLgeacyTable.setAllRowsVisible(true);
-	                lowerPanel.add(details, tableTitle, tieflingLgeacyTable);
+	                tieflingLegacyTable.setItems(tieflingSubspecies);
+	                tieflingLegacyTable.setAllRowsVisible(true);
+	                lowerPanel.add(details, tableTitle, tieflingLegacyTable);
                 } else {
                 		lowerPanel.add(details);
                 }
@@ -232,6 +237,12 @@ public class DetermineOriginView extends AppLayout {
         
         Button nextButton = new Button("Next Step");
         nextButton.addClickListener(click -> {
+        		CharacterData formData = getCharacterData();
+			formData.setBackground(backgroundField.getValue().name());
+			formData.setSpecies(speciesField.getValue().name());
+
+			VaadinSession.getCurrent().setAttribute(CharacterData.class, formData);
+        	
         		UI.getCurrent().navigate(AbilityScoresView.class);
         });
         nextButton.getStyle().set("left", "50rem").set("top", "0.5rem");
@@ -240,7 +251,7 @@ public class DetermineOriginView extends AppLayout {
         VerticalLayout bottomPanel = new VerticalLayout(header);
         bottomPanel.getStyle().set("overflow", "auto");
         HorizontalLayout mainContent = new HorizontalLayout(leftPanel, rightPanel);
-        mainContent.setHeight("83vh");
+        mainContent.setHeightFull();
         mainContent.getStyle().set("overflow", "auto");
         bottomPanel.add(mainContent, lowerPanel);
         setContent(bottomPanel);
@@ -294,5 +305,13 @@ public class DetermineOriginView extends AppLayout {
         
 	    return speciesCard;
 	}
+	
+	private CharacterData getCharacterData() {
+        CharacterData data = VaadinSession.getCurrent().getAttribute(CharacterData.class);
+        if (data == null) {
+            throw new IllegalStateException("No data from previous step.");
+        }
+        return data;
+    }
 	
 }

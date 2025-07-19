@@ -1,4 +1,4 @@
-package com.quantum_magnus.grid_contents;
+package com.quantum_magnus.tables;
 
 public class Dragonborn {
 	

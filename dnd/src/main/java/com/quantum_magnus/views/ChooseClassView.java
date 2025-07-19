@@ -1,5 +1,8 @@
-package com.quantum_magnus.dnd;
+package com.quantum_magnus.views;
 
+import com.quantum_magnus.dnd.CharacterData;
+import com.quantum_magnus.dnd.DnDClasses;
+import com.quantum_magnus.dnd.NavigationBar;
 import com.quantum_magnus.dnd.DnDKeywords.Class;
 import com.vaadin.flow.component.Html;
 import com.vaadin.flow.component.UI;
@@ -19,19 +22,18 @@ import com.vaadin.flow.component.orderedlayout.FlexComponent.Alignment;
 import com.vaadin.flow.component.orderedlayout.FlexComponent;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
+import com.vaadin.flow.server.VaadinSession;
 
 @Route("create/choose-a-class")
 @PageTitle("Choose a Class")
 public class ChooseClassView extends AppLayout {
-
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 	private static Accordion[] accordions = new Accordion[12];
 
-	public ChooseClassView() {
-				
+	public ChooseClassView() {	
 		DrawerToggle toggle = new DrawerToggle();
         H1 title = new H1("Create Character");
         title.getStyle().set("font-size", "var(--lumo-font-size-l)").set("margin", "0");
@@ -293,10 +295,15 @@ public class ChooseClassView extends AppLayout {
         
         H1 heading = new H1("Step 1: Choose a Class");
         
-        Button nextButton = new Button("Next Step");
-        nextButton.addClickListener(click -> {
-        		UI.getCurrent().navigate(DetermineOriginView.class);
-        });
+		Button nextButton = new Button("Next Step");
+		nextButton.addClickListener(click -> {
+			CharacterData formData = getCharacterData();
+			formData.setClassIn(classField.getValue().name());
+
+			VaadinSession.getCurrent().setAttribute(CharacterData.class, formData);
+
+			UI.getCurrent().navigate(DetermineOriginView.class);
+		});
         nextButton.getStyle().set("left", "53.33rem").set("top", "0.5rem");
         header.add(heading, nextButton);
         
@@ -307,6 +314,14 @@ public class ChooseClassView extends AppLayout {
         mainContent.getStyle().set("overflow", "auto");
         bottomPanel.add(mainContent);
         setContent(bottomPanel);
+    }
+	
+	private CharacterData getCharacterData() {
+        CharacterData data = VaadinSession.getCurrent().getAttribute(CharacterData.class);
+        if (data == null) {
+            throw new IllegalStateException("No data from previous step.");
+        }
+        return data;
     }
 
 }

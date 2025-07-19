@@ -1,5 +1,7 @@
-package com.quantum_magnus.dnd;
+package com.quantum_magnus.views;
 
+import com.quantum_magnus.dnd.CharacterData;
+import com.quantum_magnus.dnd.NavigationBar;
 import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.applayout.AppLayout;
 import com.vaadin.flow.component.applayout.DrawerToggle;
@@ -8,17 +10,19 @@ import com.vaadin.flow.component.html.H1;
 import com.vaadin.flow.component.html.H3;
 import com.vaadin.flow.component.html.H4;
 import com.vaadin.flow.component.html.Image;
+import com.vaadin.flow.component.html.ListItem;
+import com.vaadin.flow.component.html.OrderedList;
 import com.vaadin.flow.component.html.Paragraph;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.orderedlayout.FlexComponent.Alignment;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
+import com.vaadin.flow.server.VaadinSession;
 
 @Route("create")
 @PageTitle("Create a Character")
 public class CreateIntroView extends AppLayout {
-
 	/**
 	 * 
 	 */
@@ -82,8 +86,17 @@ public class CreateIntroView extends AppLayout {
         		+ "to the other players and the DM and decide whether your characters know one another, how they "
         		+ "met, and what sorts of quests the group might undertake together.");
         
+        H3 noteHeader3 = new H3("Steps in Character Creation");
+        
+        OrderedList creationSteps = new OrderedList();
+        creationSteps.add(new ListItem("Choose a Class"));
+        creationSteps.add(new ListItem("Determine Origin"));
+        creationSteps.add(new ListItem("Determine Ability Scores"));
+        creationSteps.add(new ListItem("Choose an Alignment"));
+        creationSteps.add(new ListItem("Fill in Details"));
+        
         leftPanel.add(art, createIntro, getReady, notes);
-        rightPanel.add(noteHeader1, note1, noteHeader2, note2);
+        rightPanel.add(noteHeader1, note1, noteHeader2, note2, noteHeader3, creationSteps);
         
         HorizontalLayout header = new HorizontalLayout();
         
@@ -91,6 +104,11 @@ public class CreateIntroView extends AppLayout {
         
         Button nextButton = new Button("Let's Begin");
         nextButton.addClickListener(click -> {
+        		CharacterData formData = getCharacterData();
+        		
+            // Store in session
+        		VaadinSession.getCurrent().setAttribute(CharacterData.class, formData);
+        	
         		UI.getCurrent().navigate(ChooseClassView.class);
         });
         nextButton.getStyle().set("left", "51.5rem").set("top", "0.5rem");
@@ -105,4 +123,10 @@ public class CreateIntroView extends AppLayout {
         bottomPanel.add(mainContent);
         setContent(bottomPanel);
 	}
+	
+	private CharacterData getCharacterData() {
+        CharacterData data = VaadinSession.getCurrent().getAttribute(CharacterData.class);
+        return data != null ? data : new CharacterData();
+    }
+	
 }
