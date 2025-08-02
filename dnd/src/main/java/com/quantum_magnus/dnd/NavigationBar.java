@@ -5,6 +5,7 @@ import com.quantum_magnus.views.AlignmentView;
 import com.quantum_magnus.views.ChooseClassView;
 import com.quantum_magnus.views.CreateIntroView;
 import com.quantum_magnus.views.DetermineOriginView;
+import com.quantum_magnus.views.FillInDetailsView;
 import com.quantum_magnus.views.MainView;
 import com.vaadin.flow.component.icon.VaadinIcon;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
@@ -34,6 +35,8 @@ public class NavigationBar extends VerticalLayout {
 		this.createLink.addItem(new SideNavItem("3: Ability Scores", AbilityScoresView.class,
 		        VaadinIcon.BAR_CHART_V.create()));
 		this.createLink.addItem(new SideNavItem("4: Choose Alignment", AlignmentView.class,
+		        VaadinIcon.SCALE.create()));
+		this.createLink.addItem(new SideNavItem("5: Fill In Details", FillInDetailsView.class,
 		        VaadinIcon.SCALE.create()));
 		
         this.add(this.homeLink, this.createLink);

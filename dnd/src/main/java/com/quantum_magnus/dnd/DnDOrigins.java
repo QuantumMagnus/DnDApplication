@@ -1015,7 +1015,8 @@ public class DnDOrigins {
 							As a Human, you have these special traits.<br/>
 							&nbsp;&nbsp;<b><i>Resourceful.</i></b> You gain Heroic Inspiration whenever you finish a Long 
 							Rest.<br/>
-							&nbsp;&nbsp;<b><i>Skillful.</i></b> You gain proficiency in one skill of your choice.<br/>
+							&nbsp;&nbsp;<b><i>Skillful.</i></b> You gain proficiency in one skill of your choice (see the 
+							Feats page). Skilled is recommended.<br/>
 							&nbsp;&nbsp;<b><i>Versatile.</i></b> You gain an Origin feat of your choice.<br/>
 		     	        </p>
 		     	    </div>

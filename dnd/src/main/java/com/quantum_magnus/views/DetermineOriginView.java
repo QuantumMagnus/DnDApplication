@@ -182,6 +182,7 @@ public class DetermineOriginView extends AppLayout {
                 speciesRightPanel.add(rightHtml);
                 
                 HorizontalLayout details = new HorizontalLayout(speciesLeftPanel, speciesRightPanel);
+                details.getStyle().set("margin-left", "auto").set("margin-right", "auto");
                 lowerPanel.getStyle().set("overflow", "auto");
                 lowerPanel.setHeight(speciesHtml[3]);
                 

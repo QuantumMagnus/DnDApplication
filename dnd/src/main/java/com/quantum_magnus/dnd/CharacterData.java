@@ -11,8 +11,9 @@ public class CharacterData implements Serializable {
     private String background;
     private String species;
     private int[] abilityScores;
+    private String alignment;
 
-    // Constructors
+    // Constructor
     public CharacterData() {}
 
     public String getClassIn() {
@@ -45,6 +46,14 @@ public class CharacterData implements Serializable {
     
     public void setAbilityScores(int[] abilityScores) {
     		this.abilityScores = abilityScores;
+    }
+    
+    public String getAlignment() {
+    		return this.alignment;
+    }
+    
+    public void setAlignment(String alignment) {
+    		this.alignment = alignment;
     }
     
 }

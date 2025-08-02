@@ -27,7 +27,7 @@ public class DnDKeywords {
     }
     
     public enum ClassComplexity {
-    	Low, Average, High
+    		Low, Average, High
     }
 	
 	public enum Background {
@@ -72,8 +72,30 @@ public class DnDKeywords {
 	    }
 
 	    public String getDisplayName() {
-	        return displayName;
+	        return this.displayName;
 	    }
+	}
+	
+	public enum Alignments {
+		LawfulGood("Lawful Good"),
+		NeutralGood("Neutral Good"),
+		ChaoticGood("Chaotic Good"),
+		LawfulNeutral("Lawful Neutral"),
+		TrueNeutral("True Neutral"),
+		ChaoticNeutral("Chaotic Neutral"),
+		LawfulEvil("Lawful Evil"),
+		NeutralEvil("Neutral Evil"),
+		ChaoticEvil("Chaotic Evil");
+		
+		private final String displayName;
+		
+		Alignments(String displayName) {
+			this.displayName = displayName;
+		}
+		
+		public String getDisplayName() {
+			return this.displayName;
+		}
 	}
 	
 }

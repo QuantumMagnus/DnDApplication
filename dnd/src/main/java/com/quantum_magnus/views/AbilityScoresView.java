@@ -282,7 +282,7 @@ public class AbilityScoresView extends AppLayout{
 
     			VaadinSession.getCurrent().setAttribute(CharacterData.class, formData);
         	
-	    		UI.getCurrent().navigate(TestView.class);
+	    		UI.getCurrent().navigate(AlignmentView.class);
 	    });
         nextButton.getStyle().set("left", "41.75rem").set("top", "0.5rem");
         header.add(heading, nextButton);
